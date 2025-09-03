@@ -16,7 +16,7 @@ export default function Sidebar() {
       <div className="flex flex-col items-center">
         {/* Rotated Avatar (90 degrees) */}
         <img
-          src="/images/avatar-dark.JPG"
+          src={`${import.meta.env.BASE_URL}images/avatar-dark.JPG`}
           alt="Avatar"
           className="w-32 h-32 rounded-full border-2 border-white shadow-md 
                      transform rotate-90 hover:rotate-0 transition-transform duration-500"

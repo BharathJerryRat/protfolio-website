@@ -10,9 +10,9 @@ export default function About() {
       <div className="card">
         <h2 className="text-2xl font-bold mb-4">About Me</h2>
 
-        {/* ✅ Add your profile image here */}
+        {/* ✅ Use BASE_URL so it works on GitHub Pages */}
         <img 
-          src="/images/profile.JPG"   // must match the exact file name in public/images
+          src={`${import.meta.env.BASE_URL}images/profile.JPG`} 
           alt="Profile"
           className="w-40 h-40 rounded-full mx-auto mb-6 shadow-lg"
         />
