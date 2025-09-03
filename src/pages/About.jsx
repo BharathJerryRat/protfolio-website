@@ -1,14 +1,21 @@
 import { motion } from 'framer-motion'
 
-export default function About(){
+export default function About() {
   return (
     <motion.section 
-      initial={{opacity:0, y:8}} 
-      animate={{opacity:1, y:0}} 
+      initial={{ opacity: 0, y: 8 }} 
+      animate={{ opacity: 1, y: 0 }} 
       className="min-h-screen p-6"
     >
       <div className="card">
         <h2 className="text-2xl font-bold mb-4">About Me</h2>
+
+        {/* ✅ Add your profile image here */}
+        <img 
+          src="/images/profile.JPG"   // must match the exact file name in public/images
+          alt="Profile"
+          className="w-40 h-40 rounded-full mx-auto mb-6 shadow-lg"
+        />
 
         <p className="text-muted mb-4">
           I am an enthusiastic Computer Science graduate passionate about technology and problem-solving. 
