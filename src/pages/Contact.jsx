@@ -1,31 +1,63 @@
-import { useState } from 'react'
-import { openMailto } from '../utils/mailTo'
+// src/pages/Contact.jsx
+import React from 'react';
+import { motion } from 'framer-motion';
 
-export default function Contact(){
-  const [name,setName]=useState('')
-  const [email,setEmail]=useState('')
-  const [message,setMessage]=useState('')
-
-  const handleSubmit = (e)=>{
-    e.preventDefault()
-    openMailto({name,email,message})
-  }
-
+export default function Contact() {
   return (
-    <section className="min-h-screen p-6">
-      <div className="card max-w-2xl mx-auto">
-        <h2 className="text-2xl font-bold mb-4">Contact</h2>
-        <p className="text-muted mb-4">Want to work together or have a question? Send me a message.</p>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input className="w-full p-3 bg-surface rounded text-text border border-white/6" placeholder="Your name" value={name} onChange={(e)=>setName(e.target.value)} required />
-          <input className="w-full p-3 bg-surface rounded text-text border border-white/6" placeholder="Your email" value={email} onChange={(e)=>setEmail(e.target.value)} required type="email" />
-          <textarea className="w-full p-3 bg-surface rounded text-text border border-white/6" placeholder="Your message" value={message} onChange={(e)=>setMessage(e.target.value)} required rows="6" />
-          <div className="flex gap-3">
-            <button type="submit" className="btn-gradient">Send Message</button>
-            <a className="btn-gradient bg-white text-primary" href="mailto:bharathsenthil567@gmail.com">Email Direct</a>
-          </div>
-        </form>
+    <motion.div
+      className="min-h-screen bg-background flex flex-col items-center justify-center p-10"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <h2 className="text-5xl font-bold text-heading mb-12">Contact Me</h2>
+
+      <div className="bg-surface p-12 rounded-3xl shadow-2xl border border-white/20 max-w-3xl w-full space-y-6">
+        {/* Email */}
+        <p className="text-2xl">
+          <strong>📧 Email:</strong>{' '}
+          <a 
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=bharathsenthil567@gmail.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-xl text-primary hover:underline"
+          >
+            bharathsenthil567@gmail.com
+          </a>
+        </p>
+
+        {/* Phone */}
+        <p className="text-2xl">
+          <strong>📱 Phone:</strong>{' '}
+          <a href="tel:+919994598497" className="text-xl text-primary hover:underline">
+            +91 9994598497
+          </a>
+        </p>
+
+        {/* WhatsApp */}
+        <p className="text-2xl">
+          <strong>💬 WhatsApp:</strong>{' '}
+          <a 
+            href="https://wa.me/919994598497" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-xl text-primary hover:underline flex items-center gap-3"
+          >
+            <span className="text-2xl">📲</span>
+            Chat on WhatsApp
+          </a>
+        </p>
+
+        {/* Address */}
+        <p className="text-2xl">
+          <strong>🏠 Address:</strong>{' '}
+          <span className="text-xl">19, Ramaswamy St, Peddur PO, Tirupattur - 635701</span>
+        </p>
+
+        <div className="mt-10 text-center">
+          <p className="text-lg text-muted">📩 Feel free to reach out to me for projects or collaborations!</p>
+        </div>
       </div>
-    </section>
-  )
+    </motion.div>
+  );
 }

@@ -11,10 +11,14 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.9.1",
     "framer-motion": "^11.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.20.1"
+    "react-parallax-tilt": "^1.7.307",
+    "react-router-dom": "^6.20.1",
+    "react-type-animation": "^3.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.0",

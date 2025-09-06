@@ -1,15 +1,13 @@
-import Sidebar from './Sidebar'
-import { motion } from 'framer-motion'
+import Sidebar from "./Sidebar";
+import { Outlet } from "react-router-dom";
 
-export default function Layout({children}){
+export default function Layout() {
   return (
-    <div className="min-h-screen">
-      <div className="container flex gap-8">
-        <Sidebar />
-        <motion.main initial={{opacity:0, y:8}} animate={{opacity:1, y:0}} transition={{duration:0.6}} className="flex-1">
-          {children}
-        </motion.main>
-      </div>
+    <div className="min-h-screen flex">
+      <Sidebar />
+      <main className="flex-1 p-6">
+        <Outlet />  {/* This renders the current page */}
+      </main>
     </div>
-  )
+  );
 }

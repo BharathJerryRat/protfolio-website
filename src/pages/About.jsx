@@ -10,13 +10,7 @@ export default function About() {
       <div className="card">
         <h2 className="text-2xl font-bold mb-4">About Me</h2>
 
-        {/* ✅ Use BASE_URL so it works on GitHub Pages */}
-        <img 
-          src={`${import.meta.env.BASE_URL}images/profile.JPG`} 
-          alt="Profile"
-          className="w-40 h-40 rounded-full mx-auto mb-6 shadow-lg"
-        />
-
+       
         <p className="text-muted mb-4">
           I am an enthusiastic Computer Science graduate passionate about technology and problem-solving. 
           My interests lie in web development, Python programming, and data structures. I enjoy building creative 
