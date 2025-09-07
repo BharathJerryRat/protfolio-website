@@ -1,9 +1,9 @@
-name: Deploy Portfolio
+name: Deploy Vite React App
 
 on:
   push:
     branches:
-      - main  # Deploy whenever you push to main
+      - main  # or master, depending on your default branch
 
 jobs:
   build:
@@ -19,7 +19,10 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+
+      - name: Fix vite permission
+        run: chmod +x ./node_modules/.bin/vite
 
       - name: Build project
         run: npm run build
